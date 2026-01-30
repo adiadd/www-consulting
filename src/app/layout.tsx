@@ -1,6 +1,6 @@
 import { services, siteConfig } from "@/config/site";
 import { Analytics } from "@vercel/analytics/next";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,6 +13,17 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FF4E02" },
+    { media: "(prefers-color-scheme: dark)", color: "#FF4E02" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  colorScheme: "light",
+};
 
 export const metadata: Metadata = {
   title: {
@@ -110,7 +121,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#FF4E02" />
+        {/* Apple-specific status bar styling */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        {/* Microsoft tile color for Windows */}
+        <meta name="msapplication-TileColor" content="#FF4E02" />
+        <meta name="msapplication-navbutton-color" content="#FF4E02" />
         <link rel="dns-prefetch" href="https://cal.com" />
         <link rel="dns-prefetch" href="https://linkedin.com" />
         <link rel="dns-prefetch" href="https://x.com" />

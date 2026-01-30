@@ -9,6 +9,7 @@
 
 /* Hide scrollbars while allowing scroll */
 html, body {
+  background-color: #FF4E02;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
