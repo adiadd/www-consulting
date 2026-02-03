@@ -48,7 +48,6 @@ export const founder = {
   email: "adi.addepalli@gmail.com",
   bio: [
     { text: "During the day, Aditya works to help organizations, from the NBA to Fortune 500 companies, figure out how AI can actually help them. He's helped teams automate tedious workflows, surface buried knowledge, and make better decisions faster.", isQuote: false },
-    { text: "My job is to translate the 'what's possible' into 'what's practical' for your organization.", isQuote: true },
     { text: "Before AWS, Aditya built and ran his own startup with 5,000+ monthly active users. He knows what it's like to wear many hats and make technology work with limited resources. He started agni labs to bring that same resourcefulness to organizations doing meaningful work, whether you're a nonprofit, foundation, or company with a mission.", isQuote: false },
   ],
   highlights: [
