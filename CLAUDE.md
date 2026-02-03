@@ -15,15 +15,19 @@ bun run lint      # Run ESLint
 bun run typecheck # TypeScript type checking
 ```
 
+_Note: Assume I have the local dev server running for you_
+
 ## Architecture
 
 **App Router Structure** (`src/app/`):
+
 - `layout.tsx` - Root layout with metadata, fonts (Geist), analytics, JSON-LD schemas
 - `page.tsx` - Home page rendering `ConsultingLanding`
 - `team/page.tsx` - Team/founder page
 - `robots.ts`, `sitemap.ts` - SEO generation
 
 **Components** (`src/components/`):
+
 - `consulting-landing.tsx` - Main landing page (server component)
 - `consulting-client.tsx` - Client wrapper with custom cursor, service cards ("use client")
 - `team-page.tsx` - Founder bio and details

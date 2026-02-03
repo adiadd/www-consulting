@@ -1,3 +1,5 @@
+import { MobileTabBar } from "@/components/shared/mobile-tab-bar";
+import { Navigation } from "@/components/shared/navigation";
 import { services, siteConfig } from "@/config/site";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
@@ -146,6 +148,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navigation />
+        <MobileTabBar />
         {children}
         <Analytics />
       </body>

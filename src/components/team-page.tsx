@@ -1,6 +1,5 @@
 import { ClientWrapper, Cursor } from "@/components/consulting-client";
 import { Footer } from "@/components/shared/footer";
-import { Navigation } from "@/components/shared/navigation";
 import { CTAButton } from "@/components/ui/cta-button";
 import { FounderImage } from "@/components/ui/founder-image";
 import { founder } from "@/config/site";
@@ -247,7 +246,6 @@ export const TeamPage = () => {
       <div style={{ ...customStyles.root, ...customStyles.body }}>
         {noiseOverlay}
         <Cursor />
-        <Navigation />
         <TeamPageContent />
       </div>
     </ClientWrapper>

@@ -1,6 +1,5 @@
 import { ClientWrapper, Cursor, ServiceCard } from "@/components/consulting-client";
 import { Footer } from "@/components/shared/footer";
-import { Navigation } from "@/components/shared/navigation";
 import { CTAButton } from "@/components/ui/cta-button";
 import { siteLinks } from "@/config/site";
 import type { CSSProperties } from "react";
@@ -240,7 +239,6 @@ export const ConsultingLanding = () => {
       <div style={{ ...customStyles.root, ...customStyles.body }}>
         {noiseOverlay}
         <Cursor />
-        <Navigation />
         <ConsultingLandingContent />
       </div>
     </ClientWrapper>

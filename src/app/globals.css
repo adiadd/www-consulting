@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* CSS Custom Properties */
+:root {
+  --color-primary: #FF4E02;
+}
+
 /* Base reset */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -304,4 +309,39 @@ a, button, .cta-button, .nav-link, .footer-link {
   border-left: 3px solid rgba(0,0,0,0.3);
   margin: 1rem 0;
   max-width: 65ch;
+}
+
+/* Mobile Tab Bar */
+.mobile-tab-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000 !important;
+  color: #FF4E02 !important;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid rgba(255, 78, 2, 0.2);
+}
+
+.mobile-tab-bar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #FF4E02 !important;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: lowercase;
+  gap: 4px;
+}
+
+@media (max-width: 768px) {
+  .mobile-tab-bar {
+    display: flex;
+  }
 }
