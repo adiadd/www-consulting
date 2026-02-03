@@ -167,8 +167,8 @@ const ConsultingLandingContent = () => {
                 maxWidth: "35ch",
               }}
             >
-              agni labs partners with organizations to turn generative ai
-              ambition into reality. from strategy to real use.
+              agni labs partners with organizations to turn ai
+              ambitions into reality. from strategy to real use.
             </p>
             <CTAButton href={siteLinks.calcom} external>
               start the conversation
@@ -187,9 +187,9 @@ const ConsultingLandingContent = () => {
         <div className="grid-12">
           <div style={{ gridColumn: "span 12" }}>
             <h2 className="text-section-heading" style={{ maxWidth: "80%" }}>
-              generative ai isn&apos;t a feature.
+              generative ai isn&apos;t just a feature.
               <br />
-              it&apos;s a new way to build.
+              it&apos;s a whole new paradigm.
             </h2>
           </div>
           <div style={{ gridColumn: "7 / 13", marginTop: "4rem" }}>
@@ -245,7 +245,7 @@ const ConsultingLandingContent = () => {
           <ServiceCard
             number="01 / DISCOVER"
             title={<>strategic<br />assessment</>}
-            description="we start by understanding you, your business, and your goals. through discussions, we identify real ai use cases that will move you needle."
+            description="we start by understanding you, your business, and your goals. through discussions, we identify real ai use cases that will move your needle."
           />
           <ServiceCard
             number="02 / DESIGN"
@@ -294,10 +294,7 @@ const ConsultingLandingContent = () => {
                 linkedin
               </FooterLink>
               <FooterLink href={siteLinks.socials.twitter} external>
-                twitter / x
-              </FooterLink>
-              <FooterLink href={siteLinks.socials.github} external>
-                github
+                twitter/x
               </FooterLink>
             </div>
           </div>
