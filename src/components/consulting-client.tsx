@@ -3,6 +3,8 @@
 import type { CSSProperties, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 
+const CURSOR_INTERACTIVE_SELECTOR = "a, button, .service-card";
+
 const cursorDotStyle: CSSProperties = {
   width: "12px",
   height: "12px",
@@ -46,7 +48,7 @@ export const Cursor = () => {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a, button, .service-card")) {
+      if (target.closest(CURSOR_INTERACTIVE_SELECTOR)) {
         setStyle((prev) => ({
           ...prev,
           transform: "translate(-50%, -50%) scale(2.5)",
@@ -58,7 +60,7 @@ export const Cursor = () => {
 
     const handleMouseOut = (e: MouseEvent) => {
       const relatedTarget = e.relatedTarget as HTMLElement | null;
-      if (!relatedTarget?.closest("a, button, .service-card")) {
+      if (!relatedTarget?.closest(CURSOR_INTERACTIVE_SELECTOR)) {
         setStyle((prev) => ({
           ...prev,
           transform: "translate(-50%, -50%) scale(1)",

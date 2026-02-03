@@ -1,4 +1,7 @@
 import { ClientWrapper, Cursor, ServiceCard } from "@/components/consulting-client";
+import { CTAButton } from "@/components/ui/cta-button";
+import { FooterLink } from "@/components/ui/footer-link";
+import { FooterSectionHeader } from "@/components/ui/footer-section-header";
 import { siteLinks } from "@/config/site";
 import Link from "next/link";
 import type { CSSProperties } from "react";
@@ -37,84 +40,9 @@ const customStyles = {
   } as CSSProperties,
 };
 
-// Navigation styles - hoisted to module level
-const navStyle: CSSProperties = {
-  display: "flex",
-  justifyContent: "space-between",
-  padding: "2rem",
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100%",
-  zIndex: 100,
-  mixBlendMode: "difference",
-  color: "white",
-};
-
-const logoStyle: CSSProperties = {
-  fontSize: "1.25rem",
-  fontWeight: 700,
-  letterSpacing: "-0.05em",
-};
-
-const menuItemStyle: CSSProperties = {
-  fontSize: "0.875rem",
-  marginLeft: "2rem",
-  cursor: "pointer",
-  textDecoration: "none",
-  color: "inherit",
-};
-
-// ConsultingLandingContent styles - hoisted to module level
-const heroSectionStyle: CSSProperties = {
-  minHeight: "100vh",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  padding: "2rem",
-  position: "relative",
-};
-
-const gridContainerStyle: CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "repeat(12, 1fr)",
-  gap: "1rem",
-  padding: 0,
-  position: "relative",
-};
-
-const heroTextStyle: CSSProperties = {
-  fontSize: "clamp(3rem, 8vw, 9rem)",
-  lineHeight: 0.9,
-  marginBottom: "2rem",
-  position: "relative",
-  zIndex: 10,
-  fontWeight: 600,
-  letterSpacing: "-0.04em",
-  textTransform: "lowercase",
-};
-
-const btnPrimaryStyle: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  background: "black",
-  color: "var(--color-primary)",
-  padding: "1.5rem 2rem",
-  textDecoration: "none",
-  fontWeight: 700,
-  textTransform: "lowercase",
-  border: "none",
-  cursor: "pointer",
-  transition: "background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-  marginTop: "2rem",
-  fontSize: "1.25rem",
-  minWidth: "200px",
-};
-
 const Navigation = () => {
   return (
-    <nav style={navStyle} aria-label="Main navigation">
+    <nav className="nav-main" aria-label="Main navigation">
       <Link
         href="#main-content"
         className="skip-link"
@@ -129,21 +57,16 @@ const Navigation = () => {
       >
         Skip to main content
       </Link>
-      <Link href="/" style={{ ...logoStyle, textDecoration: "none", color: "inherit" }} aria-label="Agni Labs - Go to homepage">agni labs</Link>
+      <Link href="/" className="nav-logo" aria-label="Agni Labs - Go to homepage">agni labs</Link>
       <div className="nav-menu">
-        <Link
-          href="#services"
-          style={menuItemStyle}
-          className="nav-link"
-        >
+        <Link href="#services" className="nav-link nav-menu-item">
           services
         </Link>
         <Link
           href={siteLinks.calcom}
           target="_blank"
           rel="noopener noreferrer"
-          style={menuItemStyle}
-          className="nav-link"
+          className="nav-link nav-menu-item"
         >
           contact
         </Link>
@@ -176,7 +99,7 @@ const ShadowConstruct = ({
 const ConsultingLandingContent = () => {
   return (
     <main id="main-content">
-      <section style={heroSectionStyle}>
+      <section className="section-hero">
         <ShadowConstruct
           className="block-1"
           style={{
@@ -209,7 +132,7 @@ const ConsultingLandingContent = () => {
           }}
         />
 
-        <div className="grid-container" style={gridContainerStyle}>
+        <div className="grid-container grid-12">
           <div
             className="content-block"
             style={{
@@ -218,7 +141,7 @@ const ConsultingLandingContent = () => {
               marginTop: "10rem",
             }}
           >
-            <h1 className="hero-text" style={heroTextStyle}>
+            <h1 className="hero-text text-hero">
               discover
               <br />
               design
@@ -247,16 +170,9 @@ const ConsultingLandingContent = () => {
               agni labs partners with organizations to turn generative ai
               ambition into reality. from strategy to real use.
             </p>
-            <Link
-              href={siteLinks.calcom}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={btnPrimaryStyle}
-              className="cta-button"
-            >
+            <CTAButton href={siteLinks.calcom} external>
               start the conversation
-              <span style={{ marginLeft: "1rem" }}>→</span>
-            </Link>
+            </CTAButton>
           </div>
         </div>
       </section>
@@ -268,18 +184,9 @@ const ConsultingLandingContent = () => {
           zIndex: 2,
         }}
       >
-        <div style={gridContainerStyle}>
+        <div className="grid-12">
           <div style={{ gridColumn: "span 12" }}>
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3.5rem)",
-                maxWidth: "80%",
-                lineHeight: 1.1,
-                fontWeight: 600,
-                letterSpacing: "-0.04em",
-                textTransform: "lowercase",
-              }}
-            >
+            <h2 className="text-section-heading" style={{ maxWidth: "80%" }}>
               generative ai isn&apos;t a feature.
               <br />
               it&apos;s a new way to build.
@@ -313,15 +220,13 @@ const ConsultingLandingContent = () => {
       >
         <div style={{ marginBottom: "2rem" }}>
           <span
+            className="text-tight-lower"
             style={{
               fontSize: "1.5rem",
               marginBottom: "2rem",
               borderBottom: "2px solid var(--color-ink)",
               paddingBottom: "0.5rem",
               display: "inline-block",
-              fontWeight: 600,
-              letterSpacing: "-0.04em",
-              textTransform: "lowercase",
             }}
           >
             core competencies
@@ -378,114 +283,39 @@ const ConsultingLandingContent = () => {
         >
           {/* Social links */}
           <div className="footer-social">
-            <h4
-              style={{
-                fontWeight: 600,
-                letterSpacing: "-0.04em",
-                textTransform: "lowercase",
-                fontSize: "0.75rem",
-                opacity: 0.6,
-                marginBottom: "0.5rem",
-              }}
-            >
-              social
-            </h4>
+            <FooterSectionHeader>social</FooterSectionHeader>
             <div
               style={{
                 display: "flex",
                 gap: "1.5rem",
               }}
             >
-              <Link
-                href={siteLinks.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-link"
-                style={{
-                  color: "var(--color-primary)",
-                  fontSize: "0.875rem",
-                  textDecoration: "none",
-                  textTransform: "lowercase",
-                }}
-              >
+              <FooterLink href={siteLinks.socials.linkedin} external>
                 linkedin
-              </Link>
-              <Link
-                href={siteLinks.socials.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-link"
-                style={{
-                  color: "var(--color-primary)",
-                  fontSize: "0.875rem",
-                  textDecoration: "none",
-                  textTransform: "lowercase",
-                }}
-              >
+              </FooterLink>
+              <FooterLink href={siteLinks.socials.twitter} external>
                 twitter / x
-              </Link>
-              <Link
-                href={siteLinks.socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-link"
-                style={{
-                  color: "var(--color-primary)",
-                  fontSize: "0.875rem",
-                  textDecoration: "none",
-                  textTransform: "lowercase",
-                }}
-              >
+              </FooterLink>
+              <FooterLink href={siteLinks.socials.github} external>
                 github
-              </Link>
+              </FooterLink>
             </div>
           </div>
 
           {/* Contact */}
           <div className="footer-contact" style={{ textAlign: "center" }}>
-            <h4
-              style={{
-                fontWeight: 600,
-                letterSpacing: "-0.04em",
-                textTransform: "lowercase",
-                fontSize: "0.75rem",
-                opacity: 0.6,
-                marginBottom: "0.5rem",
-              }}
-            >
-              inquiries
-            </h4>
-            <Link
-              href={`mailto:${siteLinks.email}`}
-              className="footer-link"
-              style={{
-                color: "var(--color-primary)",
-                textDecoration: "none",
-                fontSize: "0.875rem",
-              }}
-            >
+            <FooterSectionHeader>inquiries</FooterSectionHeader>
+            <FooterLink href={`mailto:${siteLinks.email}`}>
               {siteLinks.email}
-            </Link>
+            </FooterLink>
           </div>
 
           {/* Copyright & Location */}
           <div className="footer-meta" style={{ textAlign: "right" }}>
-            <span
-              style={{
-                fontSize: "0.75rem",
-                opacity: 0.6,
-                display: "block",
-                marginBottom: "0.25rem",
-              }}
-            >
+            <span className="footer-meta-text" style={{ display: "block", marginBottom: "0.25rem" }}>
               © {CURRENT_YEAR} AGNI LABS
             </span>
-            <span
-              style={{
-                fontSize: "0.75rem",
-                opacity: 0.6,
-              }}
-            >
+            <span className="footer-meta-text">
               NEW YORK CITY
             </span>
           </div>

@@ -54,25 +54,34 @@ body {
   outline-offset: -2px;
 }
 
-/* ServiceCard hover effects - CSS-only for better performance */
+/* ServiceCard base styles */
 .service-card {
   background: transparent;
   color: inherit;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.service-card:hover {
-  background: black;
-  color: color-mix(in srgb, var(--color-primary) 80%, white 20%);
 }
 
 .service-card .service-card-overlay {
   opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
-.service-card:hover .service-card-overlay {
-  opacity: 1;
+/* ServiceCard hover effects - only on devices with hover capability (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .service-card {
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .service-card:hover {
+    background: black;
+    color: color-mix(in srgb, var(--color-primary) 80%, white 20%);
+  }
+
+  .service-card .service-card-overlay {
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover .service-card-overlay {
+    opacity: 1;
+  }
 }
 
 /* Hover states for interactive elements */
@@ -98,6 +107,121 @@ a, button, .cta-button, .nav-link, .footer-link {
 /* Dark section color scheme for native controls */
 .dark-section {
   color-scheme: dark;
+}
+
+/* Typography utilities */
+.text-tight-lower {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+}
+
+.text-hero {
+  font-size: clamp(3rem, 8vw, 9rem);
+  line-height: 0.9;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+}
+
+.text-section-heading {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+}
+
+/* Navigation */
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-menu-item {
+  font-size: 0.875rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Layout */
+.section-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  padding: 0;
+  position: relative;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  color: var(--color-primary);
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: lowercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  min-width: 200px;
+}
+
+/* Footer */
+.footer-section-header {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+}
+
+.footer-link-styled {
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.footer-meta-text {
+  font-size: 0.75rem;
+  opacity: 0.6;
 }
 
 /* Responsive overrides */
