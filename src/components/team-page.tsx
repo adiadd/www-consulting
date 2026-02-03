@@ -2,8 +2,8 @@ import { ClientWrapper, Cursor } from "@/components/consulting-client";
 import { Footer } from "@/components/shared/footer";
 import { Navigation } from "@/components/shared/navigation";
 import { CTAButton } from "@/components/ui/cta-button";
+import { FounderImage } from "@/components/ui/founder-image";
 import { founder } from "@/config/site";
-import Image from "next/image";
 import type { CSSProperties } from "react";
 
 const customStyles = {
@@ -114,18 +114,7 @@ const TeamPageContent = () => {
                   border: "2px solid black",
                 }}
               >
-                <Image
-                  src={founder.image}
-                  alt={founder.name}
-                  width={180}
-                  height={180}
-                  priority
-                  style={{
-                    objectFit: "cover",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                />
+                <FounderImage src={founder.image} alt={founder.name} />
               </div>
               <div>
                 <span

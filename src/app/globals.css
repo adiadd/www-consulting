@@ -36,6 +36,32 @@ body {
   }
 }
 
+/* Image loading shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.image-skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-skeleton {
+    animation: none;
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
 /* Focus styles */
 .skip-link:focus {
   left: 2rem !important;
