@@ -1,49 +1,8 @@
-import { ClientWrapper, Cursor } from "@/components/consulting-client";
-import { Footer } from "@/components/shared/footer";
 import { CTAButton } from "@/components/ui/cta-button";
 import { FounderImage } from "@/components/ui/founder-image";
 import { founder } from "@/config/site";
-import type { CSSProperties } from "react";
 
-const customStyles = {
-  root: {
-    "--color-primary": "#FF4E02",
-    "--color-black": "#050505",
-    "--color-ink": "#000000",
-    "--font-main": "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    "--spacing-unit": "1rem",
-    "--border-width": "1px",
-  } as CSSProperties & Record<string, string>,
-  body: {
-    backgroundColor: "var(--color-primary)",
-    color: "var(--color-ink)",
-    fontFamily: "var(--font-main)",
-    overflowX: "hidden",
-    width: "100vw",
-    fontSize: "16px",
-    lineHeight: "1.4",
-    WebkitFontSmoothing: "antialiased",
-  } as CSSProperties,
-};
-
-// Hoisted static JSX (rendering-hoist-jsx)
-const noiseOverlay = (
-  <div
-    style={{
-      position: "fixed",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      pointerEvents: "none",
-      zIndex: 9999,
-      opacity: 0.015,
-      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-    }}
-  />
-);
-
-const TeamPageContent = () => {
+export const TeamPage = () => {
   return (
     <main id="main-content">
       {/* Hero Section - smaller than homepage */}
@@ -235,19 +194,6 @@ const TeamPageContent = () => {
         </div>
       </section>
 
-      <Footer />
     </main>
-  );
-};
-
-export const TeamPage = () => {
-  return (
-    <ClientWrapper>
-      <div style={{ ...customStyles.root, ...customStyles.body }}>
-        {noiseOverlay}
-        <Cursor />
-        <TeamPageContent />
-      </div>
-    </ClientWrapper>
   );
 };

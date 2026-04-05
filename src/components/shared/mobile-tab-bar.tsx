@@ -3,25 +3,6 @@
 import { useState } from "react";
 import { siteLinks } from "@/config/site";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const ServicesIcon = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <rect x="3" y="3" width="7" height="7" />
-    <rect x="14" y="3" width="7" height="7" />
-    <rect x="3" y="14" width="7" height="7" />
-    <rect x="14" y="14" width="7" height="7" />
-  </svg>
-);
 
 const TeamIcon = () => (
   <svg
@@ -72,36 +53,6 @@ const ContactIcon = () => (
 
 export const MobileTabBar = () => {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-  const isBlogRoute = pathname.startsWith("/blog");
-
-  if (isBlogRoute) {
-    return (
-      <div className="mobile-blog-bar" aria-label="Mobile navigation">
-        <Link href="/#services" className="mobile-blog-bar-item">
-          <ServicesIcon />
-          <span>services</span>
-        </Link>
-        <Link href="/blog" className="mobile-blog-bar-item mobile-blog-bar-item-active">
-          <BlogIcon />
-          <span>blog</span>
-        </Link>
-        <Link href="/team" className="mobile-blog-bar-item">
-          <TeamIcon />
-          <span>team</span>
-        </Link>
-        <a
-          href={siteLinks.calcom}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mobile-blog-bar-item"
-        >
-          <ContactIcon />
-          <span>contact</span>
-        </a>
-      </div>
-    );
-  }
 
   return (
     <div
@@ -112,18 +63,9 @@ export const MobileTabBar = () => {
       )}
       <div className="mobile-fab-menu">
         <Link
-          href="/#services"
-          className="mobile-fab-item"
-          style={{ "--i": 0 } as React.CSSProperties}
-          onClick={() => setOpen(false)}
-        >
-          <ServicesIcon />
-          <span>services</span>
-        </Link>
-        <Link
           href="/team"
           className="mobile-fab-item"
-          style={{ "--i": 1 } as React.CSSProperties}
+          style={{ "--i": 0 } as React.CSSProperties}
           onClick={() => setOpen(false)}
         >
           <TeamIcon />
@@ -132,7 +74,7 @@ export const MobileTabBar = () => {
         <Link
           href="/blog"
           className="mobile-fab-item"
-          style={{ "--i": 2 } as React.CSSProperties}
+          style={{ "--i": 1 } as React.CSSProperties}
           onClick={() => setOpen(false)}
         >
           <BlogIcon />
@@ -143,7 +85,7 @@ export const MobileTabBar = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="mobile-fab-item"
-          style={{ "--i": 3 } as React.CSSProperties}
+          style={{ "--i": 2 } as React.CSSProperties}
           onClick={() => setOpen(false)}
         >
           <ContactIcon />

@@ -155,6 +155,3 @@ export const ServiceCard = ({
   );
 };
 
-export const ClientWrapper = ({ children }: { children: ReactNode }) => {
-  return <>{children}</>;
-};

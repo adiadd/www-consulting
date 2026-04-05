@@ -20,9 +20,6 @@ export const Navigation = () => {
       </Link>
       <Link href="/" className="nav-logo" aria-label="Agni Labs - Go to homepage">agni labs</Link>
       <div className="nav-menu">
-        <Link href="/#services" className="nav-link nav-menu-item">
-          services
-        </Link>
         <Link href="/blog" className="nav-link nav-menu-item">
           blog
         </Link>

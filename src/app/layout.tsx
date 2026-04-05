@@ -1,5 +1,7 @@
+import { Footer } from "@/components/shared/footer";
 import { MobileTabBar } from "@/components/shared/mobile-tab-bar";
 import { Navigation } from "@/components/shared/navigation";
+import { PageShell } from "@/components/shared/page-shell";
 import { services, siteConfig } from "@/config/site";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
@@ -153,7 +155,10 @@ export default function RootLayout({
       >
         <Navigation />
         <MobileTabBar />
-        {children}
+        <PageShell>
+          {children}
+          <Footer />
+        </PageShell>
         <Analytics />
       </body>
     </html>

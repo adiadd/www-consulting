@@ -3,6 +3,8 @@
 /* CSS Custom Properties */
 :root {
   --color-primary: #FF4E02;
+  --color-ink: #000000;
+  --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* Base reset */
@@ -17,11 +19,6 @@ html {
   background: #FF4E02;
 }
 
-body {
-  background-color: black;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
@@ -29,6 +26,8 @@ body::-webkit-scrollbar {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 /* Image loading shimmer */
@@ -326,7 +325,6 @@ a, button, .cta-button, .nav-link, .footer-link {
 
 @media (max-width: 768px) {
   .mobile-fab { display: block; }
-  .mobile-blog-bar { display: grid; }
 }
 
 /* Scrim overlay */
@@ -416,45 +414,6 @@ a, button, .cta-button, .nav-link, .footer-link {
   opacity: 0;
 }
 
-.mobile-blog-bar {
-  display: none;
-  position: fixed;
-  left: 12px;
-  right: 12px;
-  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  z-index: 1000;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.45rem;
-  padding: 0.45rem;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: rgba(247, 236, 218, 0.9);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
-  backdrop-filter: blur(12px);
-}
-
-.mobile-blog-bar-item {
-  display: grid;
-  justify-items: center;
-  gap: 0.3rem;
-  padding: 0.6rem 0.35rem;
-  color: rgba(5, 5, 5, 0.72);
-  text-decoration: none;
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.mobile-blog-bar-item svg {
-  width: 16px;
-  height: 16px;
-}
-
-.mobile-blog-bar-item-active {
-  color: #050505;
-  background: rgba(255, 78, 2, 0.14);
-}
-
 @keyframes fab-ring {
   0% { transform: scale(1); opacity: 0.6; }
   100% { transform: scale(1.6); opacity: 0; }
@@ -504,7 +463,7 @@ a, button, .cta-button, .nav-link, .footer-link {
 .mobile-fab-open .mobile-fab-item {
   opacity: 1;
   transform: scale(1) translateY(0);
-  transition-delay: calc((3 - var(--i)) * 0.06s);
+  transition-delay: calc((2 - var(--i)) * 0.06s);
 }
 
 .mobile-fab-item:active {
@@ -513,7 +472,7 @@ a, button, .cta-button, .nav-link, .footer-link {
 }
 
 /* Blog */
-.blog-shell {
+.blog-layout {
   --blog-bg: #FF4E02;
   --blog-panel: #f7ecda;
   --blog-panel-muted: rgba(247, 236, 218, 0.94);
@@ -521,22 +480,7 @@ a, button, .cta-button, .nav-link, .footer-link {
   --blog-copy: #050505;
   --blog-muted: rgba(5, 5, 5, 0.72);
   --blog-soft-shadow: 0 30px 80px rgba(56, 13, 0, 0.14);
-  background: var(--blog-bg);
-  min-height: 100vh;
   padding-top: 8rem;
-  padding-bottom: 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.blog-shell::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.018;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 .blog-hero,
@@ -935,9 +879,8 @@ a, button, .cta-button, .nav-link, .footer-link {
 }
 
 @media (max-width: 768px) {
-  .blog-shell {
+  .blog-layout {
     padding-top: 6.5rem;
-    padding-bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px));
   }
 
   .blog-hero,

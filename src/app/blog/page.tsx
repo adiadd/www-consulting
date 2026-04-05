@@ -1,4 +1,3 @@
-import { Footer } from "@/components/shared/footer";
 import { getAllPosts, formatBlogDate } from "@/lib/blog";
 import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
@@ -51,7 +50,7 @@ export default async function BlogIndexPage() {
   const posts = await getAllPosts();
 
   return (
-    <main id="main-content" className="blog-shell">
+    <main id="main-content" className="blog-layout">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -78,7 +77,6 @@ export default async function BlogIndexPage() {
           ))}
         </div>
       </section>
-      <Footer />
     </main>
   );
 }

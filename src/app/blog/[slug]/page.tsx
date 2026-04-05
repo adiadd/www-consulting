@@ -1,4 +1,3 @@
-import { Footer } from "@/components/shared/footer";
 import { founder, siteConfig } from "@/config/site";
 import { formatBlogDate, getAllPostSlugs, getPostBySlug, getPostModule } from "@/lib/blog";
 import type { Metadata } from "next";
@@ -119,7 +118,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   };
 
   return (
-    <main id="main-content" className="blog-shell">
+    <main id="main-content" className="blog-layout">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -157,8 +156,6 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </div>
       </article>
-
-      <Footer />
     </main>
   );
 }
