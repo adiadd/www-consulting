@@ -9,7 +9,7 @@ const shellStyle: CSSProperties = {
   fontFamily: "var(--font-main)",
   minHeight: "100vh",
   overflowX: "hidden",
-  width: "100vw",
+  width: "100%",
   fontSize: "16px",
   lineHeight: "1.4",
   WebkitFontSmoothing: "antialiased",

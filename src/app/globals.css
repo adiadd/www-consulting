@@ -27,6 +27,7 @@
 /* Hide scrollbars while allowing scroll */
 html {
   background: #FF4E02;
+  overflow-x: hidden;
 }
 
 html::-webkit-scrollbar,
