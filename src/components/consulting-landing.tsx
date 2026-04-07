@@ -182,7 +182,7 @@ export const ConsultingLanding = () => {
           <ServiceCard
             number="03 / DEPLOY"
             title={<>delivery<br />& handover</>}
-            description="we build alongside your team and deliver working systems with clean code and documentation. you keep full ownership of everything we create together."
+            description="we build alongside your team and deliver working systems with clean code and documentation."
             isLast
           />
         </div>

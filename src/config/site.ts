@@ -26,7 +26,7 @@ export const services = [
   {
     name: "Deploy - Delivery & Handover",
     description:
-      "We build alongside your team and deliver working systems with clean code and documentation. You keep full ownership of everything we create together.",
+      "We build alongside your team and deliver working systems with clean code and documentation.",
     serviceType: "AI Implementation",
   },
 ];
