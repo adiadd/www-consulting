@@ -20,13 +20,13 @@ const geistMono = Geist_Mono({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FF4E02" },
-    { media: "(prefers-color-scheme: dark)", color: "#FF4E02" },
+    { media: "(prefers-color-scheme: light)", color: "#0A0A0A" },
+    { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
   ],
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  colorScheme: "light",
+  colorScheme: "dark",
 };
 
 export const metadata: Metadata = {
@@ -132,8 +132,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         {/* Microsoft tile color for Windows */}
-        <meta name="msapplication-TileColor" content="#FF4E02" />
-        <meta name="msapplication-navbutton-color" content="#FF4E02" />
+        <meta name="msapplication-TileColor" content="#0A0A0A" />
+        <meta name="msapplication-navbutton-color" content="#0A0A0A" />
         <link rel="dns-prefetch" href="https://cal.com" />
         <link rel="dns-prefetch" href="https://linkedin.com" />
         <link rel="dns-prefetch" href="https://x.com" />

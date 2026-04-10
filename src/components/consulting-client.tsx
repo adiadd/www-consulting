@@ -8,7 +8,7 @@ const CURSOR_INTERACTIVE_SELECTOR = "a, button, .service-card";
 const cursorDotStyle: CSSProperties = {
   width: "12px",
   height: "12px",
-  backgroundColor: "black",
+  backgroundColor: "#FF4E02",
   position: "fixed",
   top: 0,
   left: 0,
@@ -69,7 +69,7 @@ export const Cursor = () => {
           ...prev,
           transform: "translate(-50%, -50%) scale(1)",
           mixBlendMode: "overlay",
-          backgroundColor: "black",
+          backgroundColor: "#FF4E02",
         }));
       }
     };
@@ -124,7 +124,7 @@ export const ServiceCard = ({
 }) => {
   const cardStyle: CSSProperties = {
     ...serviceCardBaseStyle,
-    borderRight: isLast ? "none" : "2px solid black",
+    borderRight: isLast ? "none" : "2px solid rgba(255,255,255,0.15)",
   };
 
   return (

@@ -56,8 +56,8 @@ export const TeamPage = () => {
               display: "grid",
               gridTemplateColumns: "1fr 2fr",
               gap: "4rem",
-              borderTop: "2px solid black",
-              borderBottom: "2px solid black",
+              borderTop: "2px solid rgba(255,255,255,0.2)",
+              borderBottom: "2px solid rgba(255,255,255,0.2)",
               padding: "3rem 0",
             }}
           >
@@ -69,7 +69,7 @@ export const TeamPage = () => {
                   height: "180px",
                   borderRadius: "4px",
                   overflow: "hidden",
-                  border: "2px solid black",
+                  border: "2px solid rgba(255,255,255,0.2)",
                 }}
               >
                 <FounderImage src={founder.image} alt={founder.name} />
@@ -151,7 +151,7 @@ export const TeamPage = () => {
                 style={{
                   marginTop: "1rem",
                   paddingTop: "1.5rem",
-                  borderTop: "1px solid rgba(0,0,0,0.2)",
+                  borderTop: "1px solid rgba(255,255,255,0.2)",
                 }}
               >
                 <span
@@ -180,7 +180,7 @@ export const TeamPage = () => {
                       style={{
                         fontSize: "0.875rem",
                         padding: "0.5rem 1rem",
-                        background: "rgba(0,0,0,0.08)",
+                        background: "rgba(255,255,255,0.08)",
                         borderRadius: "2px",
                       }}
                     >

@@ -13,7 +13,7 @@ const ShadowConstruct = ({
   const baseStyle: CSSProperties = {
     position: "absolute",
     background:
-      "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
+      "linear-gradient(to bottom, rgba(255,78,2,0.5) 0%, rgba(255,78,2,0) 100%)",
     zIndex: 1,
     pointerEvents: "none",
   };
@@ -44,7 +44,7 @@ export const ConsultingLanding = () => {
             width: "25vw",
             height: "50vh",
             background:
-              "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%)",
+              "linear-gradient(to top, rgba(255,78,2,0.4) 0%, rgba(255,78,2,0) 100%)",
           }}
         />
         <ShadowConstruct
@@ -55,7 +55,7 @@ export const ConsultingLanding = () => {
             width: "15vw",
             height: "30vh",
             background:
-              "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%)",
+              "linear-gradient(180deg, rgba(255,78,2,0.35) 0%, transparent 100%)",
           }}
         />
 
@@ -139,10 +139,9 @@ export const ConsultingLanding = () => {
         id="services"
         style={{
           padding: "4rem 2rem",
-          background: "var(--color-primary)",
           position: "relative",
           zIndex: 20,
-          borderTop: "1px solid rgba(0,0,0,0.1)",
+          borderTop: "1px solid rgba(255,255,255,0.1)",
         }}
       >
         <div style={{ marginBottom: "2rem" }}>
@@ -165,8 +164,8 @@ export const ConsultingLanding = () => {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            borderTop: "2px solid black",
-            borderBottom: "2px solid black",
+            borderTop: "2px solid rgba(255,255,255,0.15)",
+            borderBottom: "2px solid rgba(255,255,255,0.15)",
           }}
         >
           <ServiceCard

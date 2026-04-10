@@ -16,13 +16,14 @@ export const FooterC = () => {
         paddingTop: "4rem",
         overflow: "hidden",
         flexShrink: 0,
+        borderTop: "1px solid rgba(255, 255, 255, 0.1)",
       }}
     >
       {/* Black Zone — CTA & Links */}
       <div
         className="dark-section"
         style={{
-          background: "#000",
+          background: "#111",
           color: "#FF4E02",
           padding: "clamp(3rem, 6vw, 5rem) 2rem",
         }}
@@ -100,10 +101,10 @@ export const FooterC = () => {
         </div>
       </div>
 
-      {/* Orange Zone — Wordmark */}
+      {/* Wordmark */}
       <div
         style={{
-          background: "#FF4E02",
+          background: "#0A0A0A",
           position: "relative",
           overflow: "hidden",
           height: "clamp(8rem, 18vw, 16rem)",
@@ -121,7 +122,7 @@ export const FooterC = () => {
             lineHeight: 0.85,
             textTransform: "uppercase",
             background:
-              "linear-gradient(to bottom, #000 0%, #000 40%, rgba(0, 0, 0, 0.3) 80%, transparent 100%)",
+              "linear-gradient(to bottom, #FF4E02 0%, #FF4E02 40%, rgba(255, 78, 2, 0.3) 80%, transparent 100%)",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",

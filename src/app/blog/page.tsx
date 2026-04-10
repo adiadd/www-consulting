@@ -70,7 +70,9 @@ export default async function BlogIndexPage() {
               </h2>
               <p className="blog-card-description">{post.description}</p>
               <div className="blog-card-meta">
-                <time dateTime={post.publishedAt}>{formatBlogDate(post.publishedAt)}</time>
+                <time dateTime={post.publishedAt}>
+                  {formatBlogDate(post.publishedAt)}
+                </time>
                 <span>{post.readingTimeMinutes} min read</span>
               </div>
             </article>
