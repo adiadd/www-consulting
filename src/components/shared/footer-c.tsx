@@ -107,7 +107,7 @@ export const FooterC = () => {
           background: "#0A0A0A",
           position: "relative",
           overflow: "hidden",
-          height: "clamp(8rem, 18vw, 16rem)",
+          height: "clamp(6rem, 15vw, 12.5rem)",
           display: "flex",
           alignItems: "flex-start",
           justifyContent: "center",
