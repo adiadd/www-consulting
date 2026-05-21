@@ -24,18 +24,9 @@ export const TeamPage = () => {
               zIndex: 10,
             }}
           >
-            <h1 className="text-hero" style={{ marginBottom: "1rem" }}>
+            <h1 className="text-hero">
               meet the team
             </h1>
-            <p
-              style={{
-                fontWeight: 600,
-                fontSize: "1.125rem",
-                maxWidth: "50ch",
-              }}
-            >
-              the people behind agni labs.
-            </p>
           </div>
         </div>
       </section>
